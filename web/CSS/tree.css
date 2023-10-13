@@ -1,0 +1,10 @@
+button {
+    background-color: beige;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.line {
+    position: absolute;
+    border: 1px solid #000;
+}
