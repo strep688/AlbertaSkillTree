@@ -24,94 +24,94 @@
     top: 140px;
 }
 
-#Eng1{
+#Eng1 {
     position: center;
     left: 55%;
     top: 20px;
 }
 
-#Eng2{
+#Eng2 {
     position: center;
     left: 65%;
     top: 80px;
 }
 
-#Eng3{
+#Eng3 {
     position: center;
     left: 75%;
-    top:140px;
+    top: 140px;
 }
 
-#Soc1{
+#Soc1 {
     position: center;
     left: 5%;
-    top:240px;
+    top: 240px;
 }
 
-#Soc2{
+#Soc2 {
     position: center;
     left: 15%;
-    top:300px;
+    top: 300px;
 }
 
-#Soc3{
+#Soc3 {
     position: center;
     left: 25%;
-    top:360px;
+    top: 360px;
 }
 
-#Phys1{
+#Phys1 {
     position: center;
     left: 55%;
-    top:240px;
+    top: 240px;
 }
 
-#Phys2{
+#Phys2 {
     position: center;
     left: 65%;
-    top:300px;
+    top: 300px;
 }
 
-#Phys3{
+#Phys3 {
     position: center;
     left: 75%;
-    top:360px;
+    top: 360px;
 }
 
 #Bio1 {
     position: center;
     left: 5%;
-    top:460px;
+    top: 460px;
 }
 
 #Bio2 {
     position: center;
     left: 15%;
-    top:520px;
+    top: 520px;
 }
 
 #Bio3 {
     position: center;
     left: 25%;
-    top:580px;
+    top: 580px;
 }
 
 #Chem1 {
     position: center;
     left: 55%;
-    top:460px;
+    top: 460px;
 }
 
 #Chem2 {
     position: center;
     left: 65%;
-    top:520px;
+    top: 520px;
 }
 
 #Chem3 {
     position: center;
     left: 75%;
-    top:580px;
+    top: 580px;
 }
 
 
@@ -127,7 +127,7 @@ body {
     margin: 0px;
 }
 
-#content{
+#content {
     position: absolute;
     width: 75%;
     left: 25%;
@@ -142,7 +142,7 @@ body {
     background-color: green;
     height: 100%;
     float: left;
-    position:absolute;
+    position: absolute;
 }
 
 
@@ -154,4 +154,10 @@ body {
     overflow: auto;
     text-align: center;
     z-index: 2;
-  }
+}
+
+#submit {
+    position: absolute;
+    padding: 10px;
+    z-index: 69;
+}
