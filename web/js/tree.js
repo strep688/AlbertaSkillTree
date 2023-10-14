@@ -11,29 +11,16 @@ function hideContent() {
 }
 
 function toggleContent() {
-    
-    
 
-    const form = document.getElementById("form");
-    form.addEventListener("sumbmit", (e) => {
-        e.preventDefault();
-        console.log(Object.fromEntries(new FormData(e.target)));
-        console.log(Object.fromEntries(new FormData(form)));
+    var x = document.getElementById("finished-courses").value;
 
-    });
-
-
-    var data1 = [];
-    
-
-    console.log(data1);
-    console.log("gaming");
+    console.log(x);
     hideContent();
     hideForm();
 }
 
 function hideForm() {
-    {   
+    {
         var x = document.getElementById('userInput');
 
         if (x.style.display === "none") {
@@ -49,19 +36,19 @@ function hideForm() {
 window.onload = myMain;
 
 function myMain() {
-  document.getElementById("content").onclick = buton;
+    document.getElementById("content").onclick = buton;
 }
 
 function buton(e) {
-  if (e.target.tagName == 'BUTTON') {
-    toggleButton(e)
-  }
+    if (e.target.tagName == 'BUTTON') {
+        toggleButton(e)
+    }
 }
 
-function toggleButton(e){
-    if (e.target.style.backgroundColor == "lightblue"){
+function toggleButton(e) {
+    if (e.target.style.backgroundColor == "lightblue") {
         e.target.style.backgroundColor = "beige";
-    }else{
+    } else {
         e.target.style.backgroundColor = "lightblue";
     }
 }
