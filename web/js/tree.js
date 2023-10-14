@@ -43,3 +43,25 @@ function hideForm() {
         }
     }
 }
+
+
+
+window.onload = myMain;
+
+function myMain() {
+  document.getElementById("content").onclick = buton;
+}
+
+function buton(e) {
+  if (e.target.tagName == 'BUTTON') {
+    toggleButton(e)
+  }
+}
+
+function toggleButton(e){
+    if (e.target.style.backgroundColor == "lightblue"){
+        e.target.style.backgroundColor = "beige";
+    }else{
+        e.target.style.backgroundColor = "lightblue";
+    }
+}
