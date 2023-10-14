@@ -10,7 +10,22 @@
 
 <body>
     This is the landing page!
+    <div id="coursesData">
+        <h2>Courses Data</h2>
+        <pre id="coursesJson"></pre>
+    </div>
 
+    <div id="majorsData">
+        <h2>Majors Data</h2>
+        <pre id="majorsJson"></pre>
+    </div>
+
+    <div id="universitiesData">
+        <h2>Universities Data</h2>
+        <pre id="universitiesJson"></pre>
+    </div>
+    
+    
     <form>
         <label for="finished-courses">Finished Courses</label> <br>
         <select name="finished-courses" id="finished-courses" size="4" multiple>
@@ -34,6 +49,42 @@
         <br>
         <input type="submit" value="Submit">
     </form>
+
+
+    <script>
+        function course(name, skills, prereq){
+            this.name = null;
+            this.skils = null;
+            this.prereq = null;
+        }
+
+        // Function to fetch and display data from an endpoint
+        function fetchDataAndDisplay(endpoint, elementId) {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    const jsonContainer = document.getElementById(elementId);
+                    jsonContainer.textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        // Fetch data from the courses endpoint
+        fetchDataAndDisplay('/courses', 'coursesJson');
+
+        // Fetch data from the majors endpoint
+        fetchDataAndDisplay('/majors', 'majorsJson');
+
+        // Fetch data from the universities endpoint
+        fetchDataAndDisplay('/universities', 'universitiesJson');
+        //END Chatgpt
+    </script>
+
+
+
+
 </body>
 
 </html>

@@ -20,7 +20,12 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/data', async (req, res) => {
+app.get('/courses', async (req, res) => {
+    const { data, error } = await supabase.from('course').select()
+    res.send(data)
+})
+
+app.get('/majors', async (req, res) => {
     const { data, error } = await supabase.from('course').select()
     res.send(data)
 })
