@@ -11,13 +11,29 @@ function hideContent() {
 }
 
 function toggleContent() {
-    console.log("it brokey");
+    
+    
+
+    const form = document.getElementById("form");
+    form.addEventListener("sumbmit", (e) => {
+        e.preventDefault();
+        console.log(Object.fromEntries(new FormData(e.target)));
+        console.log(Object.fromEntries(new FormData(form)));
+
+    });
+
+
+    var data1 = [];
+    
+
+    console.log(data1);
+    console.log("gaming");
     hideContent();
     hideForm();
 }
 
 function hideForm() {
-    {
+    {   
         var x = document.getElementById('userInput');
 
         if (x.style.display === "none") {
