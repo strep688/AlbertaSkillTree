@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/tree.css">
-    <title>Sciences Skill Tree</title>
+    <link rel="stylesheet" href="domarrow.css">
+    
+    <script src="domarrow.js"></script>
 </head>
-
 <body>
     <header>
         Sciences Skill Tree
     </header>
+    <div id ="infoColumn"></div>
+    <div id = "content">
     <button class="button" id="button1">Button</button>
     <button class="button" id="button2">Button</button>
     <button class="button" id="button3">Button</button>
@@ -20,8 +23,40 @@
     <button class="button" id="button5">Button</button>
     <button class="button" id="button6">Button</button>
     <button class="button" id="button7">Button</button>
-
+    <connection from="#button1" to="#button2" tail></connection>
+    <connection from="#button1" to="#button3" tail></connection>
+    <connection from="#button2" to="#button4" tail></connection>
+    <connection from="#button2" to="#button5" tail></connection>
+    <connection from="#button3" to="#button6" tail></connection>
+    <connection from="#button3" to="#button7" tail></connection>
     <!-- <script src="js/tree.js"></script> -->
+    </div>
+    <ul id="ul-data">
+        <li>Lao Lao
+          <ul>
+            <li>Bo Miao</li>
+            <li>Su Miao
+              <ul>
+                <li>Tie Hua</li>
+                <li>Hei Hei
+                  <ul>
+                    <li>Pang Pang</li>
+                    <li>Xiang Xiang</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    
+
+    <script>
+    </script>
+
 </body>
+
+
 
 </html>

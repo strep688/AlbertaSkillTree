@@ -8,6 +8,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 app.use(express.static('arrows'))
+app.use(express.static('web'))
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/web/index.html'));
 })
@@ -15,6 +16,10 @@ app.get('/', (req, res) => {
 app.get('/arts', (req, res) => {
     res.sendFile(path.join(__dirname, '/web/arts.html'));
   })
+
+app.get('/sciences', (req, res) => {
+res.sendFile(path.join(__dirname, '/web/sciences.html'));
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
