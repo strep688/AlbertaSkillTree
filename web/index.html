@@ -6,25 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alberta Skill Tree</title>
+    <link rel="stylesheet" href="domarrow.css">
+    <script src="domarrow.js"></script>
 </head>
 
-<body>
+<body>    
+
+    <connection from="#pos1" to="#pos2" tail></connection>
     This is the landing page!
     <div id="coursesData">
         <h2>Courses Data</h2>
-        <pre id="coursesJson"></pre>
+<!--        <pre id="coursesJson"></pre> -->
     </div>
 
     <div id="majorsData">
         <h2>Majors Data</h2>
-        <pre id="majorsJson"></pre>
+        <!-- <pre id="majorsJson"></pre> -->
     </div>
 
     <div id="universitiesData">
         <h2>Universities Data</h2>
-        <pre id="universitiesJson"></pre>
+        <!-- <pre id="universitiesJson"></pre> -->
     </div>
     
+    <div id = pos1>
+        pos1
+    </div>
+
     
     <form>
         <label for="finished-courses">Finished Courses</label> <br>
@@ -37,8 +45,8 @@
             <option value="Math 30-1">Math 30-1</option>
         </select>
         <br>
-        <label for="Current-courses">Current Courses</label> <br>
-        <select name="finished-courses" id="finished-courses" size="4" multiple>
+        <label for="current-courses">Current Courses</label> <br>
+        <select name="current-courses" id="current-courses" size="4" multiple>
             <option value="English 10-1">English 10-1</option>
             <option value="English 20-1">English 20-1</option>
             <option value="English 30-1">English 30-1</option>
@@ -48,40 +56,61 @@
         </select>
         <br>
         <input type="submit" value="Submit">
+
+
     </form>
+
+    <div id = pos2>
+        pos2
+    </div>
 
 
     <script>
-        function course(name, skills, prereq){
-            this.name = null;
-            this.skils = null;
-            this.prereq = null;
+        // Function to fetch and parse JSON data
+        async function fetchDataAndParse(endpoint, elementId) {
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                const jsonContainer = document.getElementById(elementId);
+                jsonContainer.textContent = JSON.stringify(data, null, 2);
+                return data; // Return the parsed data
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return null;
+            }
         }
 
-        // Function to fetch and display data from an endpoint
-        function fetchDataAndDisplay(endpoint, elementId) {
-            fetch(endpoint)
-                .then(response => response.json())
-                .then(data => {
-                    const jsonContainer = document.getElementById(elementId);
-                    jsonContainer.textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        }
+        // Fetch data from the courses endpoint and parse it into a JavaScript object
+        const coursesPromise = fetchDataAndParse('/courses', 'coursesJson');
 
-        // Fetch data from the courses endpoint
-        fetchDataAndDisplay('/courses', 'coursesJson');
+        // Fetch data from the majors endpoint and parse it into a JavaScript object
+        const majorsPromise = fetchDataAndParse('/majors', 'majorsJson');
 
-        // Fetch data from the majors endpoint
-        fetchDataAndDisplay('/majors', 'majorsJson');
+        // Fetch data from the universities endpoint and parse it into a JavaScript object
+        const universitiesPromise = fetchDataAndParse('/universities', 'universitiesJson');
 
-        // Fetch data from the universities endpoint
-        fetchDataAndDisplay('/universities', 'universitiesJson');
-        //END Chatgpt
+        // Use the parsed data in different functions when promises resolve
+        coursesPromise.then(coursesData => {
+            if (coursesData) {
+                // Use coursesData in a function or perform operations here
+                console.log('Courses Data:', coursesData);
+            }
+        });
+
+        majorsPromise.then(majorsData => {
+            if (majorsData) {
+                // Use majorsData in a function or perform operations here
+                console.log('Majors Data:', majorsData);
+            }
+        });
+
+        universitiesPromise.then(universitiesData => {
+            if (universitiesData) {
+                // Use universitiesData in a function or perform operations here
+                console.log('Universities Data:', universitiesData);
+            }
+        });
     </script>
-
 
 
 

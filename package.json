@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.38.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "leader-line": "^1.0.7"
   }
 }
