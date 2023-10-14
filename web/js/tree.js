@@ -70,61 +70,63 @@ function toggleCourseSkills(e){
 
 var name = e.target.id;
 console.log(name);
-console.log(z);
+console.log(String(z));
+var zed = toString(z);
+
 switch(e){  
     case Math1:
-        document.getElementById("Math10C").style.zIndex = z;
+        document.getElementById('Math10C').style.zIndex = zed;
     break;
     case Math2:
-        document.getElementById("Math20-1").style.zIndex = z;
+        document.getElementById("Math20-1").style.zIndex = zed;
     break;
     case Math3:
-        document.getElementById("Math30-1").style.zIndex = z;
+        document.getElementById("Math30-1").style.zIndex = zed;
     break;
     case Eng1:
-        document.getElementById("English10-1").style.zIndex = z;
+        document.getElementById("English10-1").style.zIndex = zed;
     break;
     case Eng2:
-        document.getElementById("English20-1").style.zIndex = z;
+        document.getElementById("English20-1").style.zIndex = zed;
     break;
     case Eng3:
-        document.getElementById("English30-1").style.zIndex = z;
+        document.getElementById("English30-1").style.zIndex = zed;
     break;
     case Soc1:
-        document.getElementById("Social10-1").style.zIndex = z;
+        document.getElementById("Social10-1").style.zIndex = zed;
     break;
     case Soc2:
-        document.getElementById("Social20-1").style.zIndex = z;
+        document.getElementById("Social20-1").style.zIndex = zed;
     break;
     case Soc3:
-        document.getElementById("Social30-1").style.zIndex = z;
+        document.getElementById("Social30-1").style.zIndex = zed;
     break;
     case Chem1:
-        document.getElementById("Chemistry10-1").style.zIndex = z;
+        document.getElementById("Chemistry10-1").style.zIndex = zed;
     break;
     case Chem2:
-        document.getElementById("Chemistry20-1").style.zIndex = z;
+        document.getElementById("Chemistry20-1").style.zIndex = zed;
     break;
     case Chem3:
-        document.getElementById("Chemistry30-1").style.zIndex = z;
+        document.getElementById("Chemistry30-1").style.zIndex = zed;
     break;
     case Phys1:
-        document.getElementById("Physics10-1").style.zIndex = z;
+        document.getElementById("Physics10-1").style.zIndex = zed;
     break;
     case Phys2:
-        document.getElementById("Physics20-1").style.zIndex = z;
+        document.getElementById("Physics20-1").style.zIndex = zed;
     break;
     case Phys3:
-        document.getElementById("Physics30-1").style.zIndex = z;
+        document.getElementById("Physics30-1").style.zIndex = zed;
     break;
     case Bio1:
-        document.getElementById("Biology10-1").style.zIndex = z;
+        document.getElementById("Biology10-1").style.zIndex = zed;
     break;
     case Bio2:
-        document.getElementById("Biology20-1").style.zIndex = z;
+        document.getElementById("Biology20-1").style.zIndex = zed;
     break;
     case Bio3:
-        document.getElementById("Biology30-1").style.zIndex = z;
+        document.getElementById("Biology30-1").style.zIndex = zed;
     break;
     default:
         
